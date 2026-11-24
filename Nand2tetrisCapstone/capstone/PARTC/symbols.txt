@@ -1,0 +1,7 @@
+CLEAR = 35
+CLEAR_LOOP = 43
+DRAW = 6
+DRAW_LOOP = 14
+START = 0
+address = 16
+counter = 17

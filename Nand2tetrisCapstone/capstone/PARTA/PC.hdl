@@ -1,0 +1,16 @@
+
+CHIP PC {
+    IN in[16], load, inc, reset;
+    OUT out[16];
+
+    PARTS:
+    Register(in=nextValue, load=true, out=feedback);
+
+    Inc16(in=feedback, out=incremented);
+
+    Mux16(a=feedback, b=incremented, sel=inc, out=afterInc);
+    Mux16(a=afterInc, b=in, sel=load, out=afterLoad);
+    Mux16(a=afterLoad, b=false, sel=reset, out=nextValue);
+
+    And16(a=feedback, b=true, out=out);
+}
