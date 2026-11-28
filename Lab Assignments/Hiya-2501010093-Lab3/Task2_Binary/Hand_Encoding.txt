@@ -1,0 +1,43 @@
+TASK 2: HAND ENCODING OF HACK INSTRUCTIONS
+
+PROGRAM 1: A-INSTRUCTION
+
+Assembly Instruction: @10
+
+A-Instruction Format:
+0 + 15-bit binary value
+
+Decimal Value = 10
+
+15-bit Binary Representation:
+0000000000001010
+
+Final 16-bit Machine Code:
+0000000000001010
+
+
+PROGRAM 2: C-INSTRUCTION
+
+Assembly Instruction: D=D+A
+
+C-Instruction Format:
+111 a c1c2c3c4c5c6 d1d2d3 j1j2j3
+
+Breakdown:
+
+Prefix = 111
+a = 0
+comp = 000010 (D+A)
+dest = 010 (D)
+jump = 000 (No jump)
+
+Complete Bit Breakdown:
+111 0 000010 010 000
+
+Final 16-bit Machine Code:
+1110000010010000
+
+
+RESULT:
+
+Both A-instruction and C-instruction have been successfully converted into their respective 16-bit Hack machine codes using the Hack instruction encoding format.

@@ -55,7 +55,7 @@
 
     // Return to keyboard check after drawing
     @START
-    0;JMP
+    0;JM9P
 
 
 (CLEAR)

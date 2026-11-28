@@ -1,0 +1,18 @@
+// The Hack Computer: CPU + Instruction Memory (ROM32K) + Data Memory.
+// When reset is 1, the program stored in the ROM restarts from address 0.
+
+CHIP Computer {
+
+    IN reset;
+
+    PARTS:
+    // Instruction memory: fetches the instruction at address pc
+    ROM32K(address=pc, out=instruction);
+
+    // CPU: decodes and executes the instruction
+    CPU(inM=memOut, instruction=instruction, reset=reset,
+        outM=outM, writeM=writeM, addressM=addressM, pc=pc);
+
+    // Data memory (RAM + Screen + Keyboard): address comes from the CPU's A register
+    Memory(in=outM, load=writeM, address=addressM, out=memOut);
+}
